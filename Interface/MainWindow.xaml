@@ -1,0 +1,49 @@
+﻿<Window x:Class="Interface.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Interface"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <!-- Верхняя часть с изображением и текстом -->
+        <Border Background="#2C3E50" Grid.Row="0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Image Source="/Source/f_8035588673f79624.jpg" Width="50" Height="50" Margin="10"/>
+                <TextBlock Text="Туристическое агенство" FontSize="30" Foreground="White"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Основная часть с рабочей областью и кнопкой "Назад" -->
+        <Grid Grid.Row="1">
+            <!-- Задаем цвет фона основной части -->
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Offset="0" Color="#E0F7FA"/>
+                    <GradientStop Offset="1" Color="#B2EBF2"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <!-- Область навигации -->
+            <Frame Name="MainFrame" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered"/>
+
+            <!-- Кнопка "Назад" -->
+            <Button Content="Назад" Name="ButtonBack" Background="#EF5350" HorizontalAlignment="Left" Click="ButtonBack_Click" Margin="10,10,0,0" Width="100"/>
+        </Grid>
+
+        <!-- Нижняя часть с зеленым и красным фоном -->
+        <Grid Grid.Row="2">
+            <Rectangle Fill="#4CAF50"/>
+            <Rectangle Fill="#EF5350" Height="30"/>
+        </Grid>
+    </Grid>
+
+
+</Window>
